@@ -1,14 +1,108 @@
 ---
 title: "R and RStudio Self-Test"
-author: "Victoria Field"
-date: "6/15/2020"
-output: html_document
+author: "Prepared by: Victoria Field"
+date: "Summer 2020"
+output:
+  html_document:
+    toc: TRUE
+    toc_float: TRUE
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+**Purpose** This self-test is designed to assess your current skills in R and RStudio. 
+
+**Acknowledgements** Major components of this document are directly derived from lessons hosted at [DataCarpentry](https://datacarpentry.org/), Wickham and Grolemund's [R for Data Science](https://r4ds.had.co.nz/index.html), and 
+
+# Before we begin
+
+Be sure to download both [R](https://www.r-project.org/) and [RStudio](https://rstudio.com/)
+
+**What's the difference?**
+
+`R` can run without `RStudio`, but `RStudio` can't run without `R`. To learn more about the differences and why they're important, click [here](https://datacarpentry.org/R-ecology-lesson/00-before-we-start.html#what_is_r_what_is_rstudio)
+
+## Assumptions
+
+For the purposes of this self-test, we will assume you know how to generate and execute commands in the `R` language. Ideally: 
+
+- you are working in `RStudio`
+
+- you understand the difference between the 4 panes (if not, see [this](https://datacarpentry.org/R-ecology-lesson/00-before-we-start.html#knowing_your_way_around_rstudio))
+  
+  - **console**
+  
+  - **source**
+  
+  - **Environment/History/Other**
+  
+  - and **File/Plots/Packages/Help/Viewer**
+  
+- you can easily find and describe your working directory (if not, see [this](https://r4ds.had.co.nz/workflow-projects.html))
+
+- you understand file pathways (if not, see [this](https://r4ds.had.co.nz/workflow-projects.html))
+
+## Most importantly, remember
+
+Learning a new skill, especially if you're learning from scratch, can be fun and empowering! However, it can also be challenging, frustrating, and down-right aggravating. If this is your first time working with a coding language, it can be overwhelming (and that's putting it mildly!). The good news is that no matter where you're starting from, there is an abundance of resources to help you along the way, and you can take comfort in the fact that others have *been* where you are, and have gotten to where *they* are by not giving up! Take breaks as needed, ask questions early and often, create a workflow that works for you, and constantly be on the look-out for ways to improve your scripts, workflow, and version control (more on those later!)
+
+# Begin Self-Test
+
+Here you will be presented with a series of "challenges". The scipts (codes) will be provided to you and you will be asked to use them to answer questions. After each challenge, a link to more information will be provided so that you can learn more about the skill tested and check your answers. 
+
+## Introduction to R
+
+**Challenge #1:** What are the final values of `mass`, `age`, and `mass_index`
 ```{r}
-getwd()
+mass <- 47.5            
+age  <- 122             
+mass <- mass * 2.0      
+age  <- age - 20        
+mass_index <- mass/age  
 ```
+
+For more information about creating, re-writing, manipulating, and viewing objects, click [here](https://datacarpentry.org/R-ecology-lesson/01-intro-to-r.html#creating_objects_in_r) 
+
+**Challenge #2a:** What type of objects are `num_char`, `num_logical`, `char_logical`, and `tricky`?
+```{r}
+num_char <- c(1, 2, 3, "a")
+num_logical <- c(1, 2, 3, TRUE)
+char_logical <- c("a", "b", "c", TRUE)
+tricky <- c(1, 2, 3, "4")
+```
+
+**Challenge #2b:** How many values in `combined_logical` are "TRUE" (character). Why? If there was a coercion, where did it happen?
+```{r}
+num_logical <- c(1, 2, 3, TRUE)
+char_logical <- c("a", "b", "c", TRUE)
+combined_logical <- c(num_logical, char_logical)
+```
+
+For more information about vectors and data types, click [here](https://datacarpentry.org/R-ecology-lesson/01-intro-to-r.html#vectors_and_data_types)
+
+**Challenge 3a:** Using the object `heights` created below, create a new object called `heights_no_na` with no `NA` values.
+```{r}
+heights <- c(63, 69, 60, 65, NA, 68, 61, 70, 61, 59, 64, 69, 63, 63, NA, 72, 65, 64, 70, 63, 65)
+```
+For more information about how to handle missing data, click [here](https://datacarpentry.org/R-ecology-lesson/01-intro-to-r.html#missing_data)
+
+**Challenge 3b:** What is the median height of the new `heights_no_na` vector?
+
+**Challenge 3c:** How many of the heights from `heights_no_na` are greater than 67?
+
+For more information on subsetting vectors, click [here](https://datacarpentry.org/R-ecology-lesson/01-intro-to-r.html#subsetting_vectors)
+
+**Challenge 4a** Download a dataset using the `download.file()` function. The code below is an example. You must supply the correct file path for the `destfile=` argument
+```{r}
+download.file(url="https://ndownloader.figshare.com/files/2292169",
+              destfile = "./data_raw/portal_data_joined.csv")
+```
+
+**Challenge 4b:** Bring the downloaded data file into the R environment using the `read.csv` function. The code below is an example. You must supply the correct file path
+```{r}
+surveys<-read.csv("./data_raw/portal_data_joined.csv")
+```
+
+
