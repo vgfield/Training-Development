@@ -94,6 +94,15 @@ For more information about how to handle missing data, click [here](https://data
 
 For more information on subsetting vectors, click [here](https://datacarpentry.org/R-ecology-lesson/01-intro-to-r.html#subsetting_vectors)
 
+
+### Scoring (Necessary??)
+
+- For each challenge you completed without looking anything up: 2 points 
+
+- For each challenge you had an idea of how to complete, but had to look up a function, etc.:  1 points 
+
+- For each challenge you needed to look up completely: 0 points
+
 ## Starting with data
 
 **Challenge 1a** Download a dataset using the `download.file()` function. The code below is an example. You must supply the correct file path for the `destfile=` argument
@@ -127,11 +136,11 @@ For more information on indexing and subsetting a dataframe in base `R`, click [
 
 2. What are the levels of the `sex`? 
 
-3a. Rename the `" "` level of `sex` to `"undetermined"`
+3. Rename the `" "` level of `sex` to `"undetermined"`
 
-3b. Rename `"M"` and `"F"` to `"male"` and `"female"`, respectively. 
+4. Rename `"M"` and `"F"` to `"male"` and `"female"`, respectively. 
 
-4. Create a basic barplot of `sex` where the level `"undetermined"` is plotted last (i.e., at the right-most position)
+5. Create a basic barplot of `sex` where the level `"undetermined"` is plotted last (i.e., at the right-most position)
 
 For more information on factors, levels, re-naming, and re-ordering, click [here](https://datacarpentry.org/R-ecology-lesson/02-starting-with-data.html#factors)
 
