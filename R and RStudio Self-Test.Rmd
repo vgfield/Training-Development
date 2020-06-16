@@ -50,7 +50,7 @@ Learning a new skill, especially if you're learning from scratch, can be fun and
 
 # Begin Self-Test
 
-Here you will be presented with a series of "challenges". The scipts (codes) will be provided to you and you will be asked to use them to answer questions. After each challenge, a link to more information will be provided so that you can learn more about the skill tested and check your answers. 
+Here you will be presented with a series of "challenges". Some scipts (codes), packages, and functions will be provided to you and you will be asked to use them to answer questions. After each challenge, a link to more information will be provided so that you can learn more about the skill tested and check your answers. 
 
 ## Introduction to R
 
@@ -134,3 +134,43 @@ For more information on indexing and subsetting a dataframe in base `R`, click [
 4. Create a basic barplot of `sex` where the level `"undetermined"` is plotted last (i.e., at the right-most position)
 
 For more information on factors, levels, re-naming, and re-ordering, click [here](https://datacarpentry.org/R-ecology-lesson/02-starting-with-data.html#factors)
+
+**Challenge 5:** 
+
+1.Use the package `lubridate` to create add a Date column to `surveys`
+
+2. There should be 129 NAs in your new Date column. Identify the rows of `year`, `month`, and `day` that are failing to parse into the Date column. Why are they failing?
+
+For more information on working with dates in `R`, click [here](https://datacarpentry.org/R-ecology-lesson/02-starting-with-data.html#formatting_dates) or [here](https://r4ds.had.co.nz/dates-and-times.html)
+
+## Manipulating Data 
+
+**Challenge 1:** Using pipes, function `filter`, and function `select` from the `dplyr` package, subset the surveys data to include animals collected before 1995 and retain only the columns `year`, `sex`, and `weight`.
+
+For more information on pipes, click [here](https://datacarpentry.org/R-ecology-lesson/03-dplyr.html#pipes) or [here](https://www.datacamp.com/community/tutorials/pipe-r-tutorial)
+
+**Challenge 2:** Use pipes, `group_by()`, and `summarize()` to find the mean, min, and max hindfoot length for each species (using `species_id`). Also add the number of observations (hint: see `?n`).
+
+For more information the *split-apply-combine* paradigm, click [here](https://datacarpentry.org/R-ecology-lesson/03-dplyr.html#split-apply-combine_data_analysis_and_the_summarize()_function)
+
+**Challenge 3:** 
+
+1. The surveys data set has two measurement columns: `hindfoot_length` and `weight`. This makes it difficult to do things like look at the relationship between mean values of each measurement per year in different plot types. First, use `gather()` to create a dataset where we have a key column called `measurement` and a value column that takes on the value of either `hindfoot_length` or `weight`. Hint: You’ll need to specify which columns are being gathered.
+
+2. With this new data set, calculate the average of each measurement in each `year` for each different `plot_type`. Then `spread()` them into a data set with a column for `hindfoot_length` and `weight`. Hint: You only need to specify the key and value columns for `spread()`
+
+**Challenge 4:**
+
+1. Create a new dataframe called `surveys_complete` that has the following characteristics: 
+
+- no missing values for `weight`, `hindfoot_length`
+
+- no observations for `sex: undetermined`
+
+2. Create a dataframe called `species_counts` that extracts the most common `species_id`s from `surveys_complete` (common = more than **50** observations)
+
+3. Manipulate `surveys_complete` to include only those species found in `species_counts`
+
+For more information on reshaping data, click [here](https://datacarpentry.org/R-ecology-lesson/03-dplyr.html#reshaping_with_gather_and_spread)
+
+**Challenge 5:** Write your new `surveys_complete` dataframe to file and be sure to supply the correct path
