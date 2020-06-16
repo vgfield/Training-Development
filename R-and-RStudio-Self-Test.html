@@ -1546,14 +1546,44 @@ div.tocify {
 </div>
 <div id="begin-self-test" class="section level1">
 <h1>Begin Self-Test</h1>
+<p>Here you will be presented with a series of “challenges”. The scipts (codes) will be provided to you and you will be asked to use them to answer questions. After each challenge, a link to more information will be provided so that you can learn more about the skill tested and check your answers.</p>
 <div id="introduction-to-r" class="section level2">
 <h2>Introduction to R</h2>
-<p>Run the following script. What are the final values of <code>mass</code>, <code>age</code>, and <code>mass_index</code></p>
+<p><strong>Challenge #1:</strong> What are the final values of <code>mass</code>, <code>age</code>, and <code>mass_index</code></p>
 <pre class="r"><code>mass &lt;- 47.5            
 age  &lt;- 122             
 mass &lt;- mass * 2.0      
 age  &lt;- age - 20        
 mass_index &lt;- mass/age  </code></pre>
+<p>For more information about creating, re-writing, manipulating, and viewing objects, click <a href="https://datacarpentry.org/R-ecology-lesson/01-intro-to-r.html#creating_objects_in_r">here</a></p>
+<p><strong>Challenge #2a:</strong> What type of objects are <code>num_char</code>, <code>num_logical</code>, <code>char_logical</code>, and <code>tricky</code>?</p>
+<pre class="r"><code>num_char &lt;- c(1, 2, 3, &quot;a&quot;)
+num_logical &lt;- c(1, 2, 3, TRUE)
+char_logical &lt;- c(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, TRUE)
+tricky &lt;- c(1, 2, 3, &quot;4&quot;)</code></pre>
+<p><strong>Challenge #2b:</strong> How many values in <code>combined_logical</code> are “TRUE” (character). Why? If there was a coercion, where did it happen?</p>
+<pre class="r"><code>num_logical &lt;- c(1, 2, 3, TRUE)
+char_logical &lt;- c(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, TRUE)
+combined_logical &lt;- c(num_logical, char_logical)</code></pre>
+<p>For more information about vectors and data types, click <a href="https://datacarpentry.org/R-ecology-lesson/01-intro-to-r.html#vectors_and_data_types">here</a></p>
+<p><strong>Challenge 3a:</strong> Using the object <code>heights</code> created below, create a new object called <code>heights_no_na</code> with no <code>NA</code> values.</p>
+<pre class="r"><code>heights &lt;- c(63, 69, 60, 65, NA, 68, 61, 70, 61, 59, 64, 69, 63, 63, NA, 72, 65, 64, 70, 63, 65)</code></pre>
+<p>For more information about how to handle missing data, click <a href="https://datacarpentry.org/R-ecology-lesson/01-intro-to-r.html#missing_data">here</a></p>
+<p><strong>Challenge 3b:</strong> What is the median height of the new <code>heights_no_na</code> vector?</p>
+<p><strong>Challenge 3c:</strong> How many of the heights from <code>heights_no_na</code> are greater than 67?</p>
+<p>For more information on subsetting vectors, click <a href="https://datacarpentry.org/R-ecology-lesson/01-intro-to-r.html#subsetting_vectors">here</a></p>
+<p><strong>Challenge 4a</strong> Download a dataset using the <code>download.file()</code> function. The code below is an example. You must supply the correct file path for the <code>destfile=</code> argument</p>
+<pre class="r"><code>download.file(url=&quot;https://ndownloader.figshare.com/files/2292169&quot;,
+              destfile = &quot;./data_raw/portal_data_joined.csv&quot;)</code></pre>
+<p><strong>Challenge 4b:</strong> Bring the downloaded data file into the R environment using the <code>read.csv</code> function. The code below is an example. You must supply the correct file path</p>
+<pre class="r"><code>surveys&lt;-read.csv(&quot;./data_raw/portal_data_joined.csv&quot;)</code></pre>
+<p><strong>Challenge 5:</strong></p>
+<ol style="list-style-type: decimal">
+<li><p>What type of object is <code>surveys</code>?</p></li>
+<li><p>How many rows? How many columns?</p></li>
+<li><p>How many species have been recorded?</p></li>
+</ol>
+<p>For more information about dataframes, click <a href="https://datacarpentry.org/R-ecology-lesson/02-starting-with-data.html#what_are_data_frames">here</a></p>
 </div>
 </div>
 

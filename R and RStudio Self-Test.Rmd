@@ -94,15 +94,43 @@ For more information about how to handle missing data, click [here](https://data
 
 For more information on subsetting vectors, click [here](https://datacarpentry.org/R-ecology-lesson/01-intro-to-r.html#subsetting_vectors)
 
-**Challenge 4a** Download a dataset using the `download.file()` function. The code below is an example. You must supply the correct file path for the `destfile=` argument
+## Starting with data
+
+**Challenge 1a** Download a dataset using the `download.file()` function. The code below is an example. You must supply the correct file path for the `destfile=` argument
 ```{r}
 download.file(url="https://ndownloader.figshare.com/files/2292169",
               destfile = "./data_raw/portal_data_joined.csv")
 ```
 
-**Challenge 4b:** Bring the downloaded data file into the R environment using the `read.csv` function. The code below is an example. You must supply the correct file path
+**Challenge 1b:** Bring the downloaded data file into the R environment using the `read.csv` function. The code below is an example. You must supply the correct file path
 ```{r}
 surveys<-read.csv("./data_raw/portal_data_joined.csv")
 ```
 
+**Challenge 2:** 
 
+1. What type of object is `surveys`?
+
+2. How many rows? How many columns?
+
+3. How many species have been recorded? 
+
+For more information about dataframes, click [here](https://datacarpentry.org/R-ecology-lesson/02-starting-with-data.html#what_are_data_frames)
+
+**Challenge 3:** Create an object called `surveys_middle` using the `nrow()` function that contains only the *middle* row of data from `surveys`
+
+For more information on indexing and subsetting a dataframe in base `R`, click [here](https://datacarpentry.org/R-ecology-lesson/02-starting-with-data.html#indexing_and_subsetting_data_frames)
+
+**Challenge 4:** 
+
+1. Create a new object called `sex` from `surveys$sex`
+
+2. What are the levels of the `sex`? 
+
+3a. Rename the `" "` level of `sex` to `"undetermined"`
+
+3b. Rename `"M"` and `"F"` to `"male"` and `"female"`, respectively. 
+
+4. Create a basic barplot of `sex` where the level `"undetermined"` is plotted last (i.e., at the right-most position)
+
+For more information on factors, levels, re-naming, and re-ordering, click [here](https://datacarpentry.org/R-ecology-lesson/02-starting-with-data.html#factors)
