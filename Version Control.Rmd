@@ -51,7 +51,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 You will need to create a [GitHub account](https://github.com/) and dowload [Git](https://git-scm.com/downloads)
 
-## Look for Git in RStudio
+## Check for Git in RStudio
 
 - Open/re-start RStudio
 
@@ -60,6 +60,8 @@ You will need to create a [GitHub account](https://github.com/) and dowload [Git
 - Select *New Directory > Empty Project.* Is there a "Create a git repository" option?
 
 - Name your project. Look for the "Git" tab in the upper right pane
+
+- If everything checks out, you can delete this project
 
 ## If you don't see that
 
@@ -72,3 +74,32 @@ You will need to create a [GitHub account](https://github.com/) and dowload [Git
   - **Mac** `which git`
   
   - **Windows** `where git`
+  
+## Initialize new project 
+
+- The basic workflow described here create a project repository on GitHub
+
+- Then, you *clone*, or copy, that repository to your local computer
+
+- As you make *commits*, or changes, to the repository on your computer, you will then *push*, or upload, annotated changes to your GitHub repository
+
+### Make a new repository on Github
+
+- From homepage
+  
+  - *New Repository*
+  
+  - Check *initialize this repository with a README*
+ 
+  - *Create Repository*
+  
+  - Copy the HTTPS close URL using *Clone or Download* 
+  
+### Initialize clone repository in RStudio 
+
+- In RStudio 
+
+  - *File > New Project > Version Control > Git*
+  
+  - In "repository URL", paste the URL that you just copied
+  
