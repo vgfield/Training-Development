@@ -22,14 +22,14 @@ knitr::opts_chunk$set(echo = FALSE)
 
 - Hopefully, not like I did.
 
-## Looking from the root project folder
-![Bad management](./images/slide 1.png)
+Looking from the root project folder
+![](./images/slide 1.png)
 
-## When we open up the catch-all folder
+When we open up the catch-all folder, it's neither pretty nor organized
 
-- At a minimum, at least versions have different date associated with them
+![](./images/slide 2.png)
 
-![Bad management](./images/slide 2.png)
+It's one thing to get away with this workflow when you are only responsible for one or two projects at a time and you're not collaborating often, however; optimizing your workflow with version control will save you a lot of time, hassel, and the heartache of losing valuable code. 
 
 ## Version Control 
 
@@ -120,8 +120,68 @@ You will need to create a [GitHub account](https://github.com/) and dowload [Git
 
   - A cloned Git repository that is linked to the GitHub repository
   
-  - A new folder where everything related to our project will live 
+  - A new folder (directory) where everything related to our project will live 
   
   - A new RStudio Project (for more information on R projects, click [here](https://r4ds.had.co.nz/workflow-projects.html))
   
 ![ ](./images/new project folder.png)
+
+### Make your first commit (change) 
+
+- In RStudio, we could open the `README.md`
+
+  - Navigate to the File pane of RStudio and click **README.md** to open 
+  
+  - Add a line and write whatever you want
+
+  - Save to your local workspace
+
+![](./images/edit README.png)
+### Commit and push to GitHub
+
+- Now that you've saved that change to your local computer, you need to commit it and push it to your GitHub repository
+
+- Click the **Git** tab in the upper right pane. Based on the status, you can see the pending change to `README.md`
+
+- Check "Staged"
+
+![](./images/stage commit.png)
+
+- A new window pops up to show you the changes
+
+- When writing a commit message, focus more on explaining WHY you made the change, not WHAT change you made
+
+  - This isn't so important here, but plays a bigger role when you're collaborating or trying to keep track of your own analysis
+  
+  - The commit itself already shows HOW you changed the code, but the commit message tells you WHY
+  
+![](./images/commit.png)
+
+- Push the commit to GitHub 
+
+![](./images/git push.png)
+
+  - in general you will push less often than you commit
+  
+-**Note**: especially when you are working with collaborators, you will want to 'Pull' from GitHub before you 'Push' to ensure you are working with the most updated version (e.g., if a collaborator made an addition to the script this morning, you should Pull it before you start your edits)
+- Open a new script file 
+
+  - I personally like to script in RMarkdown (.Rmd)
+
+## Real-world example 
+
+Okay, we know how to create a GitHub repository, clone it to our computers, make local changes, and send it all back up to GitHub.
+
+Now, we're going to go through an example of a real workflow 
+
+### Open a new scripting file
+
+- Within the same project you just created, open a new scripting file 
+
+  - I personally prefer to script in a markdown document (.Rmd)
+  
+- Save the new file to your working directory (i.e., the new folder you created)
+
+- Check that your new file is saved in the correct directory 
+
+![](./images/new doc.png)
