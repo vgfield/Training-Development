@@ -2,34 +2,73 @@
 title: "Version Control"
 author: "Victoria Field"
 date: "6/29/2020"
-output: ioslides_presentation
+output:
+  html_document:
+    toc: true
+    toc_float: true
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-## R Markdown
+# Version Control with Git and GitHub
 
-This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+**Purpose** Full synthesis of version control using Git, GitHub, and RStudio. This training document is meant to be distributed to graduate students and researchers who wish to optimize productivity by integrating version control into their workflow 
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
+## Why version control?
 
-## Slide with Bullets
+- How do you keep track of your project history and versions?
 
-- Bullet 1
-- Bullet 2
-- Bullet 3
+- Hopefully, not like I did.
 
-## Slide with R Output
+## Looking from the root project folder
+![Bad management](./images/slide 1.png)
 
-```{r cars, echo = TRUE}
-summary(cars)
-```
+## When we open up the catch-all folder
 
-## Slide with Plot
+- At a minimum, at least versions have different date associated with them
 
-```{r pressure}
-plot(pressure)
-```
+![Bad management](./images/slide 2.png)
 
+## Version Control 
+
+- This is the best way to organize and manage versions of your project 
+
+- Think of version control as an unlimited 'undo' button
+
+![ ](./images/version control graphic 1.png)
+
+![ ](./images/version control graphic 2.png)
+
+## Git and GitHub
+
+**Git** is a *version control system* originally created for developers to collaborate on large software projects. Git tracks changes in the project over time so that there is always a comprehensive, structured record of the project. Each project is stored in a repository that includes all files that are part of the project.
+
+**GitHub** has become the largest *hoster of Git repositories* and includes many useful features beyond the standard Git functions.This is the interface where you can easily collaborate and navigate changes made by you or collaborators.
+
+## Getting Started 
+
+You will need to create a [GitHub account](https://github.com/) and dowload [Git](https://git-scm.com/downloads)
+
+## Look for Git in RStudio
+
+- Open/re-start RStudio
+
+- *File > New Project* Is there an option to create from Version Control? 
+
+- Select *New Directory > Empty Project.* Is there a "Create a git repository" option?
+
+- Name your project. Look for the "Git" tab in the upper right pane
+
+## If you don't see that
+
+- Open a new [shell](https://cfss.uchicago.edu/setup/shell/) 
+
+- From RStudio: *Tools > Shell*
+
+- Input
+
+  - **Mac** `which git`
+  
+  - **Windows** `where git`
