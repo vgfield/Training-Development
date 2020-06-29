@@ -17,3 +17,11 @@ getwd()
 ```{r}
 df <- read.csv("./data_raw/mydata-raw.csv")
 ```
+
+```{r}
+df$ratio <- df$hindfoot_length/df$weight
+```
+
+```{r}
+write.csv(df, "./data_processed/mydata.csv")
+```

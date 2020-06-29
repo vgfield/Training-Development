@@ -1,7 +1,7 @@
 ---
 title: "Version Control and File Pathways"
 author: "Victoria Field"
-date: "6/29/2020"
+date: "6/16/2020"
 output:
   html_document:
     toc: true
@@ -14,22 +14,22 @@ knitr::opts_chunk$set(echo = FALSE)
 
 # Version Control with Git and GitHub
 
-**Purpose** Full synthesis of version control using Git, GitHub, and RStudio. This training document is meant to be distributed to graduate students and researchers who wish to optimize productivity by integrating version control into their workflow 
+**Purpose** Synthesis of version control using Git, GitHub, and RStudio. This training document is meant to be distributed to graduate students and researchers who wish to optimize productivity by integrating version control into their workflow 
 
 ## Why version control?
 
-- How do you keep track of your project history and versions?
+- How do **you** keep track of your project history and versions?
 
-- Hopefully, not like I did.
+### Hopefully, not like I did:
 
-Looking from the root project folder
+My root project folder
 ![](./images/slide 1.png)
 
 When we open up the catch-all folder, it's neither pretty nor organized
 
 ![](./images/slide 2.png)
 
-It's one thing to get away with this workflow when you are only responsible for one or two projects at a time and you're not collaborating often, however; optimizing your workflow with version control will save you a lot of time, hassel, and the heartache of losing valuable code. 
+It's possible to get away with this workflow when you are only responsible for one or two projects at a time or you're not collaborating often, however; optimizing your workflow with version control will save you a lot of time, hassel, and the heartache of losing valuable code. 
 
 ## Version Control 
 
@@ -38,6 +38,8 @@ It's one thing to get away with this workflow when you are only responsible for 
 - Think of version control as an unlimited 'undo' button
 
 ![ ](./images/version control graphic 1.png)
+
+
 
 ![ ](./images/version control graphic 2.png)
 
@@ -55,7 +57,7 @@ You will need to create a [GitHub account](https://github.com/) and dowload [Git
 
 - Open/re-start RStudio
 
-- *File > New Project* Is there an option to create from Version Control? 
+- *File > New Project*. Is there an option to create from Version Control? 
 
 - Select *New Directory > Empty Project.* Is there a "Create a git repository" option?
 
@@ -75,13 +77,19 @@ You will need to create a [GitHub account](https://github.com/) and dowload [Git
   
   - **Windows** `where git`
   
+If Git is installed and findable, restart RStudio
+
+From RStudio, go to *Tools > Global Options > Git/SVN* and make sure that the box *Git executable* points to the Git executable location
+  
 ## Initialize new project 
 
-- The basic workflow described here create a project repository on GitHub
+- Overview
 
-- Then, you *clone*, or copy, that repository to your local computer
+  - The basic workflow described here creates a project repository on GitHub
 
-- As you make *commits*, or changes, to the repository on your computer, you will then *push*, or upload, annotated changes to your GitHub repository
+  - Then, you *clone*, or copy, that repository to your local computer
+
+  - As you make *commits*, or changes, to the repository on your computer, you will then *push*, or upload, annotated changes to your GitHub repository
 
 ### Make a new repository on Github
 
@@ -112,7 +120,7 @@ You will need to create a [GitHub account](https://github.com/) and dowload [Git
 
 ### Recap
 
-- We created a repository in GitHub. I like to picture this a cloud or screen above me. It's always there, but I never work directly on it. 
+- We created a repository in GitHub. I like to picture this as a cloud or screen above me. It's always there, but I never work directly in it. 
 
 - We used RStudio to clone the repository to our personal screens. I always work on my own screen, and then send these new versions to GitHub.
 
@@ -137,6 +145,7 @@ You will need to create a [GitHub account](https://github.com/) and dowload [Git
   - Save to your local workspace
 
 ![](./images/edit README.png)
+
 ### Commit and push to GitHub
 
 - Now that you've saved that change to your local computer, you need to commit it and push it to your GitHub repository
@@ -163,10 +172,7 @@ You will need to create a [GitHub account](https://github.com/) and dowload [Git
 
   - in general you will push less often than you commit
   
--**Note**: especially when you are working with collaborators, you will want to 'Pull' from GitHub before you 'Push' to ensure you are working with the most updated version (e.g., if a collaborator made an addition to the script this morning, you should Pull it before you start your edits)
-- Open a new script file 
-
-  - I personally like to script in RMarkdown (.Rmd)
+- **Note**: especially when you are working with collaborators, you will want to 'Pull' from GitHub before you 'Push' to ensure you are working with the most updated version (e.g., if a collaborator made an addition to the script this morning, you should Pull it before you start your edits)
 
 ## Real-world example 
 
@@ -179,6 +185,7 @@ Now, we're going to go through an example of a real workflow
 - Within the same project you just created, open a new scripting file 
 
   - I personally prefer to script in a markdown document (.Rmd)
+  new doc
   
 - Save the new file to your working directory (i.e., the new folder you created)
 
@@ -237,8 +244,33 @@ Typing the entire pathway can be tedious. Fortunately, there's a shortcut
 
 `"."` acts as an abbreviation for the working directory path
 
-`"/Users/victoriafield/Library/Mobile Documents/com~apple~CloudDocs/Summer Work/Training Documents/Training Development"` is equivalent to `"."`
+`"/Users/victoriafield/Library/Mobile Documents/com~apple~CloudDocs/Summer Work/Training Documents/Training Development"` 
+
+is equivalent to 
+
+`"."`
 
 Using the new shortcut: 
 
 ![](./images/shortcut read in.png)
+
+### Processing data and writing to separate folder
+
+Similar to reading in data from our computer to RStudio, we also write out data from RStudio to our computer usually after we: 
+
+- Clean raw data 
+
+- Process raw data
+
+- Generate new dataframe from a raw dataset 
+
+Let's say we modify the dataframe in R to include an additional column:
+
+  -`df$ratio <-  df$hindfoot_length/df$weight`
+  
+We want this modified dataframe to be available for use in future analyses, but we don't want to simply over-write our raw data file. We want to export this new dataframe as a csv and store it in a separate folder
+
+![](./images/write new csv.png)
+
+
+![](./images/new csv pathway.png)
