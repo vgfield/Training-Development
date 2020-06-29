@@ -1,5 +1,5 @@
 ---
-title: "Version Control"
+title: "Version Control and File Pathways"
 author: "Victoria Field"
 date: "6/29/2020"
 output:
@@ -185,3 +185,60 @@ Now, we're going to go through an example of a real workflow
 - Check that your new file is saved in the correct directory 
 
 ![](./images/new doc.png)
+
+### Create new folders within your working directory
+
+- You could ignore this step and keep all your scripts, data, and outputs in one folder, but that leaves you liable to make errors down the line 
+
+- The best practice is to keep separate your raw data, processed data, output figures, output tables, and scripts
+
+In your current directory, create a few new folders (you can either use your OS directory (e.g., Finder on Mac) or the lower right pane in RStudio)
+
+- e.g., "data_raw", "data_processed", "output_images"
+
+**Check**: what is the file pathway for each of these new folders? How is it related to your working directory?
+
+![](./images/pathways new folders.png)
+
+### Reading in raw data
+
+Let's say you've collected and digitized your data into a spreadsheet (raw data). You make sure it's in `.csv` file, name it "mydata-raw.csv" and save it in the newly created `data_raw` folder 
+
+You're ready to read it into your RMarkdown document using `read.csv()`
+
+You execute this code
+
+  -`read.csv("mydata-raw.csv")`
+  
+and see the following error: 
+
+![](./images/error thrown read in.png)
+
+Why can't we open this csv? The code structure is correct, the file name and type are correct
+
+#### Where R looks for data
+
+This error is common and can lead to a lot of frustration if you don't understand file pathways. 
+
+Because our working directory is 
+
+`"/Users/victoriafield/Library/Mobile Documents/com~apple~CloudDocs/Summer Work/Training Documents/Training Development"` 
+
+that is the only place `read.csv()` will look for a file called `"mydata-raw.csv"`. Any folder enclosed within the working directory (e.g., "data-raw") is a locked door...until we give R the key 
+
+#### Specifying the correct pathway
+
+![](./images/full pathway read in.png)
+Because we identified the correct pathway (i.e., an additional folder within the working directory), RStudio can accurately read in the csv
+
+#### Specifying the correct pathway (shortcut)
+
+Typing the entire pathway can be tedious. Fortunately, there's a shortcut
+
+`"."` acts as an abbreviation for the working directory path
+
+`"/Users/victoriafield/Library/Mobile Documents/com~apple~CloudDocs/Summer Work/Training Documents/Training Development"` is equivalent to `"."`
+
+Using the new shortcut: 
+
+![](./images/shortcut read in.png)
