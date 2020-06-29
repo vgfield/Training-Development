@@ -95,6 +95,7 @@ You will need to create a [GitHub account](https://github.com/) and dowload [Git
   
   - Copy the HTTPS close URL using *Clone or Download* 
   
+  
 ### Initialize clone repository in RStudio 
 
 - In RStudio 
@@ -103,3 +104,24 @@ You will need to create a [GitHub account](https://github.com/) and dowload [Git
   
   - In "repository URL", paste the URL that you just copied
   
+  - Decide on your project pathway
+  
+![1](./images/New Project wizard.png)
+![2](./images/Create new project pathway.png)
+![3](./images/new project folder created.png)
+
+### Recap
+
+- We created a repository in GitHub. I like to picture this a cloud or screen above me. It's always there, but I never work directly on it. 
+
+- We used RStudio to clone the repository to our personal screens. I always work on my own screen, and then send these new versions to GitHub.
+
+- By following these steps, we now have all these things simultaneously: 
+
+  - A cloned Git repository that is linked to the GitHub repository
+  
+  - A new folder where everything related to our project will live 
+  
+  - A new RStudio Project (for more information on R projects, click [here](https://r4ds.had.co.nz/workflow-projects.html))
+  
+![ ](./images/new project folder.png)
