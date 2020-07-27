@@ -1,7 +1,7 @@
 ---
 title: "Version Control and File Pathways"
 author: "Victoria Field"
-date: "6/16/2020"
+date: " "
 output:
   html_document:
     toc: true

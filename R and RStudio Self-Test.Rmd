@@ -22,7 +22,7 @@ Be sure to download both [R](https://www.r-project.org/) and [RStudio](https://r
 
 **What's the difference?**
 
-`R` can run without `RStudio`, but `RStudio` can't run without `R`. To learn more about the differences and why they're important, click [here](https://datacarpentry.org/R-ecology-lesson/00-before-we-start.html#what_is_r_what_is_rstudio)
+`R` is a language. `RStudio` is an *integrated development environment* (IDE) that allows you to code in R, edit, annotate, plot, and organize. To learn more about the differences and why they're important, click [here](https://datacarpentry.org/R-ecology-lesson/00-before-we-start.html#what_is_r_what_is_rstudio)
 
 ## Assumptions
 
@@ -32,9 +32,9 @@ For the purposes of this self-test, we will assume you know how to generate and 
 
 - you understand the difference between the 4 panes (if not, see [this](https://datacarpentry.org/R-ecology-lesson/00-before-we-start.html#knowing_your_way_around_rstudio))
   
-  - **console**
+  - **Console**
   
-  - **source**
+  - **Source**
   
   - **Environment/History/Other**
   
@@ -46,7 +46,7 @@ For the purposes of this self-test, we will assume you know how to generate and 
 
 ## Most importantly, remember
 
-Learning a new skill, especially if you're learning from scratch, can be fun and empowering! However, it can also be challenging, frustrating, and down-right aggravating. If this is your first time working with a coding language, it can be overwhelming (and that's putting it mildly!). The good news is that no matter where you're starting from, there is an abundance of resources to help you along the way, and you can take comfort in the fact that others have *been* where you are, and have gotten to where *they* are by not giving up! Take breaks as needed, ask questions early and often, create a workflow that works for you, and constantly be on the look-out for ways to improve your scripts, workflow, and version control (more on those later!)
+Learning a new skill, especially if you're learning from scratch, can be fun and empowering! However, it can also be challenging, frustrating, and down-right aggravating. If this is your first time working with a coding language, it can be overwhelming (and that's putting it mildly!). The good news is that no matter where you're starting from, there is an abundance of resources to help you along the way, and you can take comfort in the fact that others have been where *you* are, and have gotten to where *they* are by not giving up! Take breaks as needed, ask questions early and often, create a workflow that works for you, and constantly be on the look-out for ways to improve your scripts, workflow, and version control (more on those later!)
 
 # Begin Self-Test
 
@@ -92,16 +92,9 @@ For more information about how to handle missing data, click [here](https://data
 
 **Challenge 3c:** How many of the heights from `heights_no_na` are greater than 67?
 
+**Challenge 3d:** From the `heights` vector, what is the 3rd and 8th value?
+
 For more information on subsetting vectors, click [here](https://datacarpentry.org/R-ecology-lesson/01-intro-to-r.html#subsetting_vectors)
-
-
-### Scoring (Necessary??)
-
-- For each challenge you completed without looking anything up: 2 points 
-
-- For each challenge you had an idea of how to complete, but had to look up a function, etc.:  1 points 
-
-- For each challenge you needed to look up completely: 0 points
 
 ## Starting with data
 
