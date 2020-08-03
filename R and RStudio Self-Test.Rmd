@@ -1,6 +1,6 @@
 ---
 title: "R and RStudio Self-Test"
-author: "Prepared by: Victoria Field"
+author: "Prepared for: EDS Boot Camp"
 date: "Summer 2020"
 output:
   html_document:
@@ -14,7 +14,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 **Purpose** This self-test is designed to assess your current skills in R and RStudio. 
 
-**Acknowledgements** Major components of this document are directly derived from lessons hosted at [DataCarpentry](https://datacarpentry.org/), Wickham and Grolemund's [R for Data Science](https://r4ds.had.co.nz/index.html), and 
+**Acknowledgements** Major components of this document are directly derived from lessons hosted at [DataCarpentry](https://datacarpentry.org/), and Wickham and Grolemund's [R for Data Science](https://r4ds.had.co.nz/index.html)
 
 # Before we begin
 
@@ -50,11 +50,11 @@ Learning a new skill, especially if you're learning from scratch, can be fun and
 
 # Begin Self-Test
 
-Here you will be presented with a series of "challenges". Some scipts (codes), packages, and functions will be provided to you and you will be asked to use them to answer questions. After each challenge, a link to more information will be provided so that you can learn more about the skill tested and check your answers. 
+Here you will be presented with a series of "challenges". Some scripts (codes), packages, and functions will be provided to you and you will be asked to use them to answer questions. After each challenge, a link to more information will be provided so that you can learn more about the skill tested and check your answers. 
 
 ## Introduction to R
 
-**Challenge #1:** What are the final values of `mass`, `age`, and `mass_index`
+**Challenge #1:** What will be final values of `mass`, `age`, and `mass_index`
 ```{r}
 mass <- 47.5            
 age  <- 122             
@@ -86,13 +86,14 @@ For more information about vectors and data types, click [here](https://datacarp
 ```{r}
 heights <- c(63, 69, 60, 65, NA, 68, 61, 70, 61, 59, 64, 69, 63, 63, NA, 72, 65, 64, 70, 63, 65)
 ```
+
 For more information about how to handle missing data, click [here](https://datacarpentry.org/R-ecology-lesson/01-intro-to-r.html#missing_data)
 
 **Challenge 3b:** What is the median height of the new `heights_no_na` vector?
 
 **Challenge 3c:** How many of the heights from `heights_no_na` are greater than 67?
 
-**Challenge 3d:** From the `heights` vector, what is the 3rd and 8th value?
+**Challenge 3d:** From the `heights` vector, what are the 3rd and 8th value?
 
 For more information on subsetting vectors, click [here](https://datacarpentry.org/R-ecology-lesson/01-intro-to-r.html#subsetting_vectors)
 
@@ -104,7 +105,8 @@ download.file(url="https://ndownloader.figshare.com/files/2292169",
               destfile = "./data_raw/portal_data_joined.csv")
 ```
 
-**Challenge 1b:** Bring the downloaded data file into the R environment using the `read.csv` function. The code below is an example. You must supply the correct file path
+**Challenge 1b:** Bring the downloaded data file into the R environment using the `read.csv` function and call it `surveys`. The code below is an example. You must supply the correct file path
+
 ```{r}
 surveys<-read.csv("./data_raw/portal_data_joined.csv")
 ```
@@ -115,7 +117,7 @@ surveys<-read.csv("./data_raw/portal_data_joined.csv")
 
 2. How many rows? How many columns?
 
-3. How many species have been recorded? 
+3. How many unique species have been recorded? 
 
 For more information about dataframes, click [here](https://datacarpentry.org/R-ecology-lesson/02-starting-with-data.html#what_are_data_frames)
 
@@ -127,7 +129,7 @@ For more information on indexing and subsetting a dataframe in base `R`, click [
 
 1. Create a new object called `sex` from `surveys$sex`
 
-2. What are the levels of the `sex`? 
+2. What are the factor levels in `sex`? 
 
 3. Rename the `" "` level of `sex` to `"undetermined"`
 
@@ -139,7 +141,7 @@ For more information on factors, levels, re-naming, and re-ordering, click [here
 
 **Challenge 5:** 
 
-1.Use the package `lubridate` to create add a Date column to `surveys`
+1. Use the package `lubridate` to add a `Date` column to `surveys`
 
 2. There should be 129 NAs in your new Date column. Identify the rows of `year`, `month`, and `day` that are failing to parse into the Date column. Why are they failing?
 
@@ -147,17 +149,17 @@ For more information on working with dates in `R`, click [here](https://datacarp
 
 ## Manipulating Data 
 
-**Challenge 1:** Using pipes, function `filter`, and function `select` from the `dplyr` package, subset the surveys data to include animals collected before 1995 and retain only the columns `year`, `sex`, and `weight`.
+**Challenge 1:** Subset the surveys data to include animals collected before 1995 and retain only the columns `year`, `sex`, and `weight`. You can do this by 1) using base indexing or 2) using pipes, function `filter`, and function `select` from the `dplyr` package.
 
 For more information on pipes, click [here](https://datacarpentry.org/R-ecology-lesson/03-dplyr.html#pipes) or [here](https://www.datacamp.com/community/tutorials/pipe-r-tutorial)
 
-**Challenge 2:** Use pipes, `group_by()`, and `summarize()` to find the mean, min, and max hindfoot length for each species (using `species_id`). Also add the number of observations (hint: see `?n`).
+**Challenge 2:** Find the mean, min, and max hindfoot length for each species (using `species_id`). Also add the number of observations (hint: see `?n`). You can do this by 1) using base R or 2) using pipes, `group_by()`, and `summarize()`
 
 For more information the *split-apply-combine* paradigm, click [here](https://datacarpentry.org/R-ecology-lesson/03-dplyr.html#split-apply-combine_data_analysis_and_the_summarize()_function)
 
 **Challenge 3:** 
 
-1. The surveys data set has two measurement columns: `hindfoot_length` and `weight`. This makes it difficult to do things like look at the relationship between mean values of each measurement per year in different plot types. First, use `gather()` to create a dataset where we have a key column called `measurement` and a value column that takes on the value of either `hindfoot_length` or `weight`. Hint: You’ll need to specify which columns are being gathered.
+1. The `surveys` data set has two measurement columns: `hindfoot_length` and `weight`. This makes it difficult to do things like look at the relationship between mean values of each measurement per year in different plot types. First, use `gather()` to create a dataset where we have a key column called `measurement` and a value column that takes on the value of either `hindfoot_length` or `weight`. Hint: You’ll need to specify which columns are being gathered.
 
 2. With this new data set, calculate the average of each measurement in each `year` for each different `plot_type`. Then `spread()` them into a data set with a column for `hindfoot_length` and `weight`. Hint: You only need to specify the key and value columns for `spread()`
 

@@ -1,7 +1,7 @@
 ---
 title: "Version Control and File Pathways"
-author: "Victoria Field"
-date: " "
+author: "Prepared for: EDS Boot Camp"
+date: "Summer 2020"
 output:
   html_document:
     toc: true
@@ -29,7 +29,7 @@ When we open up the catch-all folder, it's neither pretty nor organized
 
 ![](./images/slide 2.png)
 
-It's possible to get away with this workflow when you are only responsible for one or two projects at a time or you're not collaborating often, however; optimizing your workflow with version control will save you a lot of time, hassel, and the heartache of losing valuable code. 
+It's possible to get away with this workflow when you are only responsible for one or two projects at a time or you're not collaborating often, however; optimizing your workflow with version control will save you a lot of time, hassle, and the heartache of losing valuable code. 
 
 ## Version Control 
 
@@ -51,7 +51,7 @@ It's possible to get away with this workflow when you are only responsible for o
 
 ## Getting Started 
 
-You will need to create a [GitHub account](https://github.com/) and dowload [Git](https://git-scm.com/downloads)
+You will need to create a [GitHub account](https://github.com/) and download [Git](https://git-scm.com/downloads)
 
 ## Check for Git in RStudio
 
@@ -185,7 +185,6 @@ Now, we're going to go through an example of a real workflow
 - Within the same project you just created, open a new scripting file 
 
   - I personally prefer to script in a markdown document (.Rmd)
-  new doc
   
 - Save the new file to your working directory (i.e., the new folder you created)
 

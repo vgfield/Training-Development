@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Prepared by: Victoria Field" />
+<meta name="author" content="Prepared for: EDS Boot Camp" />
 
 
 <title>R and RStudio Self-Test</title>
@@ -1510,14 +1510,14 @@ div.tocify {
 
 
 <h1 class="title toc-ignore">R and RStudio Self-Test</h1>
-<h4 class="author">Prepared by: Victoria Field</h4>
+<h4 class="author">Prepared for: EDS Boot Camp</h4>
 <h4 class="date">Summer 2020</h4>
 
 </div>
 
 
 <p><strong>Purpose</strong> This self-test is designed to assess your current skills in R and RStudio.</p>
-<p><strong>Acknowledgements</strong> Major components of this document are directly derived from lessons hosted at <a href="https://datacarpentry.org/">DataCarpentry</a>, Wickham and Grolemund’s <a href="https://r4ds.had.co.nz/index.html">R for Data Science</a>, and</p>
+<p><strong>Acknowledgements</strong> Major components of this document are directly derived from lessons hosted at <a href="https://datacarpentry.org/">DataCarpentry</a>, and Wickham and Grolemund’s <a href="https://r4ds.had.co.nz/index.html">R for Data Science</a></p>
 <div id="before-we-begin" class="section level1">
 <h1>Before we begin</h1>
 <p>Be sure to download both <a href="https://www.r-project.org/">R</a> and <a href="https://rstudio.com/">RStudio</a></p>
@@ -1546,10 +1546,10 @@ div.tocify {
 </div>
 <div id="begin-self-test" class="section level1">
 <h1>Begin Self-Test</h1>
-<p>Here you will be presented with a series of “challenges”. Some scipts (codes), packages, and functions will be provided to you and you will be asked to use them to answer questions. After each challenge, a link to more information will be provided so that you can learn more about the skill tested and check your answers.</p>
+<p>Here you will be presented with a series of “challenges”. Some scripts (codes), packages, and functions will be provided to you and you will be asked to use them to answer questions. After each challenge, a link to more information will be provided so that you can learn more about the skill tested and check your answers.</p>
 <div id="introduction-to-r" class="section level2">
 <h2>Introduction to R</h2>
-<p><strong>Challenge #1:</strong> What are the final values of <code>mass</code>, <code>age</code>, and <code>mass_index</code></p>
+<p><strong>Challenge #1:</strong> What will be final values of <code>mass</code>, <code>age</code>, and <code>mass_index</code></p>
 <pre class="r"><code>mass &lt;- 47.5            
 age  &lt;- 122             
 mass &lt;- mass * 2.0      
@@ -1571,7 +1571,7 @@ combined_logical &lt;- c(num_logical, char_logical)</code></pre>
 <p>For more information about how to handle missing data, click <a href="https://datacarpentry.org/R-ecology-lesson/01-intro-to-r.html#missing_data">here</a></p>
 <p><strong>Challenge 3b:</strong> What is the median height of the new <code>heights_no_na</code> vector?</p>
 <p><strong>Challenge 3c:</strong> How many of the heights from <code>heights_no_na</code> are greater than 67?</p>
-<p><strong>Challenge 3d:</strong> From the <code>heights</code> vector, what is the 3rd and 8th value?</p>
+<p><strong>Challenge 3d:</strong> From the <code>heights</code> vector, what are the 3rd and 8th value?</p>
 <p>For more information on subsetting vectors, click <a href="https://datacarpentry.org/R-ecology-lesson/01-intro-to-r.html#subsetting_vectors">here</a></p>
 </div>
 <div id="starting-with-data" class="section level2">
@@ -1579,13 +1579,13 @@ combined_logical &lt;- c(num_logical, char_logical)</code></pre>
 <p><strong>Challenge 1a</strong> Download a dataset using the <code>download.file()</code> function. The code below is an example. You must supply the correct file path for the <code>destfile=</code> argument</p>
 <pre class="r"><code>download.file(url=&quot;https://ndownloader.figshare.com/files/2292169&quot;,
               destfile = &quot;./data_raw/portal_data_joined.csv&quot;)</code></pre>
-<p><strong>Challenge 1b:</strong> Bring the downloaded data file into the R environment using the <code>read.csv</code> function. The code below is an example. You must supply the correct file path</p>
+<p><strong>Challenge 1b:</strong> Bring the downloaded data file into the R environment using the <code>read.csv</code> function and call it <code>surveys</code>. The code below is an example. You must supply the correct file path</p>
 <pre class="r"><code>surveys&lt;-read.csv(&quot;./data_raw/portal_data_joined.csv&quot;)</code></pre>
 <p><strong>Challenge 2:</strong></p>
 <ol style="list-style-type: decimal">
 <li><p>What type of object is <code>surveys</code>?</p></li>
 <li><p>How many rows? How many columns?</p></li>
-<li><p>How many species have been recorded?</p></li>
+<li><p>How many unique species have been recorded?</p></li>
 </ol>
 <p>For more information about dataframes, click <a href="https://datacarpentry.org/R-ecology-lesson/02-starting-with-data.html#what_are_data_frames">here</a></p>
 <p><strong>Challenge 3:</strong> Create an object called <code>surveys_middle</code> using the <code>nrow()</code> function that contains only the <em>middle</em> row of data from <code>surveys</code></p>
@@ -1593,28 +1593,28 @@ combined_logical &lt;- c(num_logical, char_logical)</code></pre>
 <p><strong>Challenge 4:</strong></p>
 <ol style="list-style-type: decimal">
 <li><p>Create a new object called <code>sex</code> from <code>surveys$sex</code></p></li>
-<li><p>What are the levels of the <code>sex</code>?</p></li>
+<li><p>What are the factor levels in <code>sex</code>?</p></li>
 <li><p>Rename the <code>&quot; &quot;</code> level of <code>sex</code> to <code>&quot;undetermined&quot;</code></p></li>
 <li><p>Rename <code>&quot;M&quot;</code> and <code>&quot;F&quot;</code> to <code>&quot;male&quot;</code> and <code>&quot;female&quot;</code>, respectively.</p></li>
 <li><p>Create a basic barplot of <code>sex</code> where the level <code>&quot;undetermined&quot;</code> is plotted last (i.e., at the right-most position)</p></li>
 </ol>
 <p>For more information on factors, levels, re-naming, and re-ordering, click <a href="https://datacarpentry.org/R-ecology-lesson/02-starting-with-data.html#factors">here</a></p>
 <p><strong>Challenge 5:</strong></p>
-<p>1.Use the package <code>lubridate</code> to create add a Date column to <code>surveys</code></p>
-<ol start="2" style="list-style-type: decimal">
-<li>There should be 129 NAs in your new Date column. Identify the rows of <code>year</code>, <code>month</code>, and <code>day</code> that are failing to parse into the Date column. Why are they failing?</li>
+<ol style="list-style-type: decimal">
+<li><p>Use the package <code>lubridate</code> to add a <code>Date</code> column to <code>surveys</code></p></li>
+<li><p>There should be 129 NAs in your new Date column. Identify the rows of <code>year</code>, <code>month</code>, and <code>day</code> that are failing to parse into the Date column. Why are they failing?</p></li>
 </ol>
 <p>For more information on working with dates in <code>R</code>, click <a href="https://datacarpentry.org/R-ecology-lesson/02-starting-with-data.html#formatting_dates">here</a> or <a href="https://r4ds.had.co.nz/dates-and-times.html">here</a></p>
 </div>
 <div id="manipulating-data" class="section level2">
 <h2>Manipulating Data</h2>
-<p><strong>Challenge 1:</strong> Using pipes, function <code>filter</code>, and function <code>select</code> from the <code>dplyr</code> package, subset the surveys data to include animals collected before 1995 and retain only the columns <code>year</code>, <code>sex</code>, and <code>weight</code>.</p>
+<p><strong>Challenge 1:</strong> Subset the surveys data to include animals collected before 1995 and retain only the columns <code>year</code>, <code>sex</code>, and <code>weight</code>. You can do this by 1) using base indexing or 2) using pipes, function <code>filter</code>, and function <code>select</code> from the <code>dplyr</code> package.</p>
 <p>For more information on pipes, click <a href="https://datacarpentry.org/R-ecology-lesson/03-dplyr.html#pipes">here</a> or <a href="https://www.datacamp.com/community/tutorials/pipe-r-tutorial">here</a></p>
-<p><strong>Challenge 2:</strong> Use pipes, <code>group_by()</code>, and <code>summarize()</code> to find the mean, min, and max hindfoot length for each species (using <code>species_id</code>). Also add the number of observations (hint: see <code>?n</code>).</p>
+<p><strong>Challenge 2:</strong> Find the mean, min, and max hindfoot length for each species (using <code>species_id</code>). Also add the number of observations (hint: see <code>?n</code>). You can do this by 1) using base R or 2) using pipes, <code>group_by()</code>, and <code>summarize()</code></p>
 <p>For more information the <em>split-apply-combine</em> paradigm, click <a href="https://datacarpentry.org/R-ecology-lesson/03-dplyr.html#split-apply-combine_data_analysis_and_the_summarize()_function">here</a></p>
 <p><strong>Challenge 3:</strong></p>
 <ol style="list-style-type: decimal">
-<li><p>The surveys data set has two measurement columns: <code>hindfoot_length</code> and <code>weight</code>. This makes it difficult to do things like look at the relationship between mean values of each measurement per year in different plot types. First, use <code>gather()</code> to create a dataset where we have a key column called <code>measurement</code> and a value column that takes on the value of either <code>hindfoot_length</code> or <code>weight</code>. Hint: You’ll need to specify which columns are being gathered.</p></li>
+<li><p>The <code>surveys</code> data set has two measurement columns: <code>hindfoot_length</code> and <code>weight</code>. This makes it difficult to do things like look at the relationship between mean values of each measurement per year in different plot types. First, use <code>gather()</code> to create a dataset where we have a key column called <code>measurement</code> and a value column that takes on the value of either <code>hindfoot_length</code> or <code>weight</code>. Hint: You’ll need to specify which columns are being gathered.</p></li>
 <li><p>With this new data set, calculate the average of each measurement in each <code>year</code> for each different <code>plot_type</code>. Then <code>spread()</code> them into a data set with a column for <code>hindfoot_length</code> and <code>weight</code>. Hint: You only need to specify the key and value columns for <code>spread()</code></p></li>
 </ol>
 <p><strong>Challenge 4:</strong></p>
